@@ -1,0 +1,40 @@
+﻿@model MvcApplication8.Models.mymodel
+@{
+    Layout = "../Shared/requirejsLayout.cshtml";
+}
+
+<div>
+    <div id="testapp3">
+        <p>{{name}}</p>
+        <br />
+        <p>{{age}}</p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="soga in sogas">
+                    <td>{{soga.sogaid}}</td>
+                    <td>{{soga.soganame}}</td>
+                    <td><a href="#" v-on:click="del(soga.sogaid)">删除</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+   @section require_js_module
+{
+    <script>
+        require( [ "app/HelloArea/hello.VueTest3" ], function(vuetest3) {
+            console.log("vue test3 has load");
+            vuetest3.init(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))));
+        });
+    </script>
+}
+
+</div>
+

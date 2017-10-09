@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "../Shared/requirejsLayout.cshtml";
+}
+
+<div>
+    <h1>hello</h1>
+    <div id="dialog" title="Basic dialog">
+        <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+    </div>
+    <div>
+        <input type="button" id="bt1" value="click me" />
+    </div>
+    <div><input type="button" id="showlayer" value="showlayer"></div>
+   @section require_js_module
+{
+    <script>
+        require( [ "app/HelloArea/hello.index" ], function() {
+            console.log("has load");
+        });
+    </script>
+}
+
+</div>
+

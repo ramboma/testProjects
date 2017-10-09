@@ -1,0 +1,54 @@
+﻿@model MvcApplication8.Models.mymodel
+@*@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VueTest1</title>
+    <script src="~/Public/Scripts/lib/vuejs/vue.js"></script>
+    
+</head>
+<body>
+    <div id="testapp1">
+        <p>{{name}}</p>
+        <br />
+        <p>{{age}}</p>
+    </div>
+    
+    <script type="text/javascript">
+        var vm = new Vue(
+            {
+                el: '#testapp1',
+                data: @(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)))
+            });
+    </script>
+</body>
+</html>
+*@
+
+@{
+    Layout = "../Shared/requirejsLayout.cshtml";
+}
+
+<div>
+    <div id="testapp1">
+        <p>{{name}}</p>
+        <br />
+        <p>{{age}}</p>
+    </div>
+   @section require_js_module
+{
+    <script>
+        require( [ "app/HelloArea/hello.VueTest2" ], function(vuetest2) {
+            console.log("vue test2 has load");
+            vuetest2.init(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))));
+        });
+    </script>
+}
+
+</div>
+

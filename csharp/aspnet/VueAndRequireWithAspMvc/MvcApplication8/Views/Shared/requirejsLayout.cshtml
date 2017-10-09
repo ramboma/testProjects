@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>requirejs layout</title>
+    
+</head>
+<body>
+    <h1>layout</h1>
+    @RenderBody()
+
+    <script data-main="/public/Scripts/main"  src="/public/Scripts/lib/requirejs/require.js"></script>
+    @RenderSection("require_js_module", required: false)
+</body>
+</html>
