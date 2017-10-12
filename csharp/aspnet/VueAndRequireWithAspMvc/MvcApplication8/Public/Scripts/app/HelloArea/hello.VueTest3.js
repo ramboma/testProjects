@@ -20,6 +20,14 @@
                                      }
                                  }
                              }
+                         },
+                     components:
+                         {
+                             'edit-template': {
+                                 template:'<div> it is a part component</div>'
+                             },
+                             
+
                          }
                  });
             return vm;

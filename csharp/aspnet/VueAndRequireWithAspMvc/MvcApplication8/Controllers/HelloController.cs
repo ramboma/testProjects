@@ -69,6 +69,18 @@ namespace MvcApplication8.Controllers
             m.sogas.Add(new soga() { sogaid = "4", soganame = "four" });
             return View(m);
         }
+        public ActionResult VueTest4()
+        {
+            mymodel m = new mymodel();
+            m.age = 14;
+            m.name = "vuetest4";
+            m.sogas = new List<soga>();
+            m.sogas.Add(new soga() { sogaid = "1", soganame = "one" });
+            m.sogas.Add(new soga() { sogaid = "2", soganame = "two" });
+            m.sogas.Add(new soga() { sogaid = "3", soganame = "three" });
+            m.sogas.Add(new soga() { sogaid = "4", soganame = "four" });
+            return View(m);
+        }
 
         public ActionResult ModelList()
         {
